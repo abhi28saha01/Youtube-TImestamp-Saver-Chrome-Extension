@@ -1,0 +1,25 @@
+{
+    "manifest_version": 3,
+    "name": "YouTube Timestamps",
+    "version": "1.0.0",
+    "description": "Bookmark and navigate to specific timestamps in YouTube videos.",
+    "author" : "Abhishek Saha",
+    "permissions": ["activeTab", "storage", "scripting", "tabs"],
+    "action": {
+      "default_popup": "popup.html",
+      "default_icon": {
+        "16": "icons/icon.png",
+        "48": "icons/icon.png",
+        "128": "icons/icon.png"
+      }
+    },
+    "background": {
+      "service_worker": "background.js"
+    },
+    "content_scripts": [
+      {
+        "matches": ["https://www.youtube.com/*"],
+        "js": ["content.js"]
+      }
+    ]
+  }
